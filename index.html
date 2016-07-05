@@ -166,13 +166,14 @@
 			}).success(function(data){
 
 				// Get 15 random indexes. We'll show these 15 on screen.
-				var countriesToShow = getXRandomNumbersBeneathMax(178, data.features.length);
+				var countriesToShow;// = getXRandomNumbersBeneathMax(178, data.features.length);
 				var totalScore = 0;
 
 				$.each(data.features, function(i, item) {
 
 					// Don't show it if it's not one of our 15 selected
-					if (countriesToShow.indexOf(i) < 0) return;
+					//if (countriesToShow.indexOf(i) < 0) return;
+					countriesToShow[i] = i;
 
 						// Create a polygon of our country
 						var poly = new google.maps.Polygon({
